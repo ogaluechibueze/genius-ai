@@ -23,6 +23,7 @@ const DashboardLayout = () => {
       <div className="content">
         <Outlet />
       </div>
+      
     </div>
   );
 };

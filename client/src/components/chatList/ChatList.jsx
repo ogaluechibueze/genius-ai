@@ -1,13 +1,14 @@
 import { Link } from "react-router-dom";
 import "./chatList.css";
 import { useQuery } from "@tanstack/react-query";
+import MobileLayout from "../../layouts/dashboardLayout/MobileLayout";
 
 const ChatList = () => {
-  const { isPending, error, data } = useQuery({
+  const { isPending, error, data } =  useQuery({
     queryKey: ["userChats"],
-    queryFn: () =>
-      fetch(`${import.meta.env.VITE_API_URL}/api/userchats`, {
-        credentials: "include",
+    queryFn: async () =>
+    await fetch(`${import.meta.env.VITE_API_URL}/api/userchats`, {
+      
       }).then((res) => res.json()),
   });
 
@@ -15,7 +16,7 @@ const ChatList = () => {
     <div className="chatList">
       <span className="title">DASHBOARD</span>
       <Link to="/dashboard">Create a new Chat</Link>
-      <Link to="/">Explore Lama AI</Link>
+      <Link to="/">Explore GENIUS AI</Link>
       <Link to="/">Contact</Link>
       <hr />
       <span className="title">RECENT CHATS</span>
@@ -32,9 +33,9 @@ const ChatList = () => {
       </div>
       <hr />
       <div className="upgrade">
-        <img src="/logo.png" alt="" />
+        <img src="/icon.png" alt="" />
         <div className="texts">
-          <span>Upgrade to Lama AI Pro</span>
+          <span>Upgrade to GENIUS AI Pro</span>
           <span>Get unlimited access to all features</span>
         </div>
       </div>

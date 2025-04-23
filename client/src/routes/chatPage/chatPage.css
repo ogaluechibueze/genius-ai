@@ -5,6 +5,10 @@
   align-items: center;
   position: relative;
 
+  @media screen and (max-width: 1024px) {
+    width: 100%;
+      } 
+
   .wrapper{
     flex:1;
     overflow: scroll;
@@ -12,11 +16,22 @@
     display: flex;
     justify-content: center;
 
+    @media screen and (max-width: 1024px) {
+      width: 100%;
+        }
+
     .chat{
       width: 50%;
       display: flex;
       flex-direction: column;
       gap: 20px;
+
+      @media screen and (max-width: 1024px) {
+        width: 100%;
+        overflow: scroll;
+       justify-content: center;
+       padding: 2px;
+          }
 
       p,li{
         margin: 10px 0px;
@@ -26,7 +41,7 @@
         padding: 20px;
 
         &.user{
-          background-color: #2c2937;
+          background-color: darkgrey;
           border-radius: 20px;
           max-width: 80%;
           align-self: flex-end;

@@ -1,3 +1,10 @@
+.newprompt{
+        width: 100%;
+        
+        @media screen and (max-width: 1024px) {
+          width: 60%;
+            }      
+
 .endChat{
   padding-bottom: 100px;
 }
@@ -11,6 +18,10 @@
     align-items: center;
     gap: 20px;
     padding: 0px 20px;
+
+    @media screen and (max-width: 1024px) {
+      width: 60%;
+        }
 
 
     input{
@@ -38,3 +49,5 @@
       }
     }
   }
+}
+ 

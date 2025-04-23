@@ -18,10 +18,14 @@ const NewPrompt = ({ data }) => {
 
   const chat = model.startChat({
     history: [
-      data?.history.map(({ role, parts }) => ({
-        role,
-        parts: [{ text: parts[0].text }],
-      })),
+      {
+        role: "user",
+        parts: [{ text: "I know everything concerning you"}],
+      },
+      {
+        role: "model",
+        parts: [{ text:"Great to meet you, what would you like to know?"}],
+      },
     ],
     generationConfig: {
       // maxOutputTokens: 100,
@@ -38,19 +42,16 @@ const NewPrompt = ({ data }) => {
   const queryClient = useQueryClient();
 
   const mutation = useMutation({
-    mutationFn: () => {
-      return fetch(`${import.meta.env.VITE_API_URL}/api/chats/${data._id}`, {
-        method: "PUT",
-        credentials: "include",
-        headers: {
-          "Content-Type": "application/json",
-        },
+    mutationFn: async () => {
+      const res = await fetch(`${import.meta.env.VITE_API_URL}/api/chats/${data._id}`, {
+       
         body: JSON.stringify({
           question: question.length ? question : undefined,
           answer,
           img: img.dbData?.filePath || undefined,
         }),
-      }).then((res) => res.json());
+      });
+      return await res.json();
     },
     onSuccess: () => {
       queryClient
@@ -115,7 +116,7 @@ const NewPrompt = ({ data }) => {
   }, []);
 
   return (
-    <>
+    <div className="newprompt">
       {/* ADD NEW CHAT */}
       {img.isLoading && <div className="">Loading...</div>}
       {img.dbData?.filePath && (
@@ -126,7 +127,7 @@ const NewPrompt = ({ data }) => {
           transformation={[{ width: 380 }]}
         />
       )}
-      {question && <div className="message user">{question}</div>}
+      {question && <div className="message-user">{question}</div>}
       {answer && (
         <div className="message">
           <Markdown>{answer}</Markdown>
@@ -141,7 +142,7 @@ const NewPrompt = ({ data }) => {
           <img src="/arrow.png" alt="" />
         </button>
       </form>
-    </>
+      </div>
   );
 };
 

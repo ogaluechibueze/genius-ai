@@ -13,3 +13,16 @@
     background-color: #12101b;
   }
 }
+ 
+
+@media screen and (max-width: 660px) {
+  .dashboardLayout{
+  display: block;
+
+  .menu{
+    width: 100%;
+    text-align: center;
+  }
+
+}
+}

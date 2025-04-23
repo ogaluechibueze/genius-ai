@@ -4,9 +4,12 @@
   gap: 100px;
   height: 100%;
 
+
   @media screen and (max-width: 1024px) {
+    display: flex;
     flex-direction: column;
-    gap: 0px;
+    gap: 1rem;
+   height: 100%;
   }
 
   .left {
@@ -17,6 +20,7 @@
     justify-content: center;
     gap: 16px;
     text-align: center;
+    
 
     h1 {
       font-size: 128px;

@@ -36,8 +36,9 @@ const DashboardPage = () => {
     <div className="dashboardPage">
       <div className="texts">
         <div className="logo">
-          <img src="/logo.png" alt="" />
-          <h1>LAMA AI</h1>
+          <img src="/icon.png" alt="" />
+          <h1>GENIUS</h1>
+          <h1>AI</h1>
         </div>
         <div className="options">
           <div className="option">
