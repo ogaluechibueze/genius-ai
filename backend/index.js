@@ -8,18 +8,12 @@ import Chat from "./models/chat.js";
 import UserChats from "./models/userChats.js";
 import { ClerkExpressRequireAuth } from "@clerk/clerk-sdk-node";
 
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 8080;
 const app = express();
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-app.use(
-  cors({
-    origin: process.env.CLIENT_URL,
-    credentials: true,
-  })
-);
 
 app.use(express.json());
 
@@ -156,9 +150,13 @@ app.use((err, req, res, next) => {
 });
 
 // PRODUCTION
+app.use(express.static(path.join(__dirname, "../client/dist")));
 
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "../client/dist", "index.html"));
+});
 
 app.listen(port, () => {
   connect();
-  console.log("Server running on 3000");
+  console.log("Server running on 8080");
 });

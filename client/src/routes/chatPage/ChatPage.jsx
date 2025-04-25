@@ -53,8 +53,7 @@ const ChatPage = () => {
                   </div>
                 </>
               ))}
-
-          {data && <NewPrompt data={data}/>}
+                   {data && <NewPrompt data={data}/>}
         </div>
       </div>
     </div>

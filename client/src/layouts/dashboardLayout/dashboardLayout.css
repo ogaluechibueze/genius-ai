@@ -1,8 +1,10 @@
 .dashboardLayout {
   display: flex;
   gap: 50px;
-  padding-top: 20px;
-  height: 100%;
+  margin-top: 110px;
+
+
+
 
   .menu {
     flex: 1;
@@ -25,4 +27,10 @@
   }
 
 }
+}
+
+@media screen and (max-width: 1024px) {
+ .menu{
+  display: none;
+ }
 }

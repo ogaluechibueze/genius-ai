@@ -1,11 +1,11 @@
 .MobileLayout{
-  
+
    
 
     .chatLit {
         position: absolute;
-        margin-top: 0.5rem;
-        gap: 1rem;
+        margin-top: 1rem;
+       
         font-weight: 500;
         flex-direction: column;
         right: 0;
@@ -38,6 +38,7 @@
         .list {
           display: flex;
           flex-direction: column;
+         
           overflow: scroll;
         }
       

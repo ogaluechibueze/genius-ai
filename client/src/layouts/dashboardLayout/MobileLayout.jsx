@@ -47,7 +47,7 @@ const MobileLayout = () => {
         <div onClick={() => setIsOpen(false)} className="chatLit">
         <span className="title">DASHBOARD</span>
         <Link to="/dashboard">Create a new Chat</Link>
-        <Link to="/">Explore GENIUS AI</Link>
+        <Link to="/">Explore DEMTECH AI</Link>
         <Link to="/">Contact</Link>
         <hr />
         <span className="title">RECENT CHATS</span>
@@ -66,7 +66,7 @@ const MobileLayout = () => {
         <div className="upgrade">
           <img src="/icon.png" alt="" />
           <div className="texts">
-            <span>Upgrade to Genius AI Pro</span>
+            <span>Upgrade to DEMTECH AI Pro</span>
             <span>Get unlimited access to all features</span>
           </div>
         </div>

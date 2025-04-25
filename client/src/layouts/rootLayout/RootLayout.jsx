@@ -3,6 +3,8 @@ import "./rootLayout.css";
 import { ClerkProvider, SignedIn, UserButton } from "@clerk/clerk-react";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import MobileLayout from "../dashboardLayout/MobileLayout";
+
+
 const PUBLISHABLE_KEY = import.meta.env.VITE_CLERK_PUBLISHABLE_KEY;
 
 if (!PUBLISHABLE_KEY) {
@@ -16,20 +18,23 @@ const RootLayout = () => {
     <ClerkProvider publishableKey={PUBLISHABLE_KEY} afterSignOutUrl="/">
       <QueryClientProvider client={queryClient}>
         <div className="rootLayout">
-          <header>
-            <Link to="/" className="logo">
-            <img src="/icon.png" />
-              <span>GENIUS AI</span>
-            </Link>
-            <div className="user">
+        <div className="navbar">
+        <header>
+          <Link to="/" className="logo">
+              <img src="/DEMTECH.png" />
+          
+          </Link>
+          <div className="user">
               <SignedIn>
-                <UserButton />
+                  <UserButton />
+                  <div className="mobile">
+              <MobileLayout />
+          </div>
               </SignedIn>
-            </div>
-            <div className="mobile">
-            <MobileLayout/>
-            </div>
+          </div>
+          
           </header>
+          </div>
           <main>
             <Outlet />
           </main>

@@ -10,13 +10,15 @@ const Homepage = () => {
     <div className="homepage">
       <img src="/orbital.png" alt="" className="orbital" />
       <div className="left">
-        <h1>GENIUS AI</h1>
-        <h2>Supercharge your creativity and productivity</h2>
-        <h3>
-          we bring Creativity you can never imagine, our AI has an answer to all questions and
-          solution to all problem
-          <br/> Try it out!
-        </h3>
+        <h1>DEMTECH AI</h1>
+        <h2>Web, Software development and many more...</h2>
+        <h4>
+        we Carryout Information Technology Services <br/>
+        we Deals On Installation And Setups Of Digital And Internet Infrastructure.<br/>
+        we Supplies Of Electrical Electronics Equipment And It's Installation Components<br/>
+        we Carryout Software And Web Development 
+          <br/> Try it out our AI App
+        </h4>
         <Link to="/dashboard">Get Started</Link>
       </div>
       <div className="right">
@@ -28,9 +30,9 @@ const Homepage = () => {
           <div className="chat">
             <img
               src={
-                typingStatus === "human1"
+                typingStatus === "demian"
                   ? "/human1.jpeg"
-                  : typingStatus === "human2"
+                  : typingStatus === "yinka"
                   ? "/human2.jpeg"
                   : "bot.png"
               }
@@ -39,25 +41,25 @@ const Homepage = () => {
             <TypeAnimation
               sequence={[
                 // Same substring at the start will only be typed out once, initially
-                "Human:We produce food for Mice",
+                "demian:We develop web applications",
                 2000,
                 () => {
                   setTypingStatus("bot");
                 },
-                "Bot:We produce food for Hamsters",
+                "Bot:We develop softwares",
                 2000,
                 () => {
-                  setTypingStatus("human2");
+                  setTypingStatus("richard");
                 },
-                "Human2:We produce food for Guinea Pigs",
+                "yinka:We carryout ICT installations",
                 2000,
                 () => {
                   setTypingStatus("bot");
                 },
-                "Bot:We produce food for Chinchillas",
+                "Bot:We sell electrical equipments",
                 2000,
                 () => {
-                  setTypingStatus("human1");
+                  setTypingStatus("demian");
                 },
               ]}
               wrapper="span"

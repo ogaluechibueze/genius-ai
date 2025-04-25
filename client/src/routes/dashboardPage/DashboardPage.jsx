@@ -37,7 +37,7 @@ const DashboardPage = () => {
       <div className="texts">
         <div className="logo">
           <img src="/icon.png" alt="" />
-          <h1>GENIUS</h1>
+          <h1>DEMTECH</h1>
           <h1>AI</h1>
         </div>
         <div className="options">

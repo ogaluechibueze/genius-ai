@@ -1,8 +1,9 @@
 .newprompt{
         width: 100%;
+        position: relative;
         
         @media screen and (max-width: 1024px) {
-          width: 60%;
+          width: 100%;
             }      
 
 .endChat{
@@ -20,7 +21,7 @@
     padding: 0px 20px;
 
     @media screen and (max-width: 1024px) {
-      width: 60%;
+      width: 100%;
         }
 
 
@@ -31,6 +32,10 @@
       outline: none;
       background-color: transparent;
       color: #ececec;
+
+      @media screen and (max-width: 1024px) {
+        width: 110%;
+          }
     }
 
     button,label{
